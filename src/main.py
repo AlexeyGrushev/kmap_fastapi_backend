@@ -11,7 +11,7 @@ class SolveRequest(BaseModel):
 
 app = FastAPI(
     title="API для вычисления карты Карно 4x4",
-    version="1.0"
+    version="1.1"
 )
 
 app.add_middleware(
