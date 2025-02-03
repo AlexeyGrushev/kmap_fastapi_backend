@@ -165,5 +165,3 @@ cython_debug/
 *.DS_Store
 *.session
 working_log.txt
-src/img/results/*.jpg
-src/face_swapping/models/*
