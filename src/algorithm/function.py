@@ -17,6 +17,7 @@ def solve_kmap(func: str):
     m_dnf = minimize_dnf(islands)
 
     return {
+        "func": func,
         "truth_table": tab,
         "pdnf": p_dnf,
         "kmap": kmap,
