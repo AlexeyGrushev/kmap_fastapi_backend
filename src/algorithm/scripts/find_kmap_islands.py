@@ -30,6 +30,8 @@ def find_size(kmap: list, number_pos: tuple) -> tuple:
     return (height, width)
 
 
+# FIX v1.1 При обнаружении 0 цикл теперь прерывается,
+# а не продолжает искать высоту
 def find_island_height(kmap: list, number: tuple, height: int, width: int):
     height_list = []
     for i_w in range(width):
@@ -43,6 +45,8 @@ def find_island_height(kmap: list, number: tuple, height: int, width: int):
                 (number[1] + i_w) % len(kmap)
             ]:
                 height_iter += 1
+            else:
+                break  # 1.1 добавлено условие
 
         while not is_degree_of_two(height_iter):
             height_iter = height_iter - 1
@@ -51,6 +55,8 @@ def find_island_height(kmap: list, number: tuple, height: int, width: int):
     return (min(height_list), width)
 
 
+# FIX v1.1 При обнаружении 0 цикл теперь прерывается,
+# а не продолжает искать высоту
 def find_island_width(kmap: list, number: tuple, height: int, width: int):
     width_list = []
 
@@ -65,6 +71,8 @@ def find_island_width(kmap: list, number: tuple, height: int, width: int):
                 (number[1] + i_w) % len(kmap)
             ]:
                 width_iter += 1
+            else:
+                break
 
         while not is_degree_of_two(width_iter):
             width_iter -= 1
